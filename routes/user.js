@@ -8,10 +8,17 @@ router.get('/',(req,res,next) => {
 });
 
 router.post('/',(req, res, next) => {
+
+    const user = {
+        nome: req.body.nome,
+        sobrenome: req.body.sobrenome,
+    }
+
     res.status(201).send({
-        msg: 'rota post usuarios'
+        msg: 'New User Created - 200',
+        userCreated: user,
     })
-    console.log(req.params);
+    console.log(user.params);
 })
 
 module.exports = router;
